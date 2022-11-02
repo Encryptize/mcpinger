@@ -1,3 +1,5 @@
+from typing import Union
+
 from pydantic import BaseModel
 
 
@@ -14,8 +16,8 @@ class Description(BaseModel):
 class Status(BaseModel):
     online: bool
     ip: str
-    players: Players | None = None
-    protocol: int | None = None
-    version: str | None = None
-    favicon: str | None = None
-    description: Description | None = None
+    players: Union[Players, None] = None
+    protocol: Union[int, None] = None
+    version: Union[str, None] = None
+    favicon: Union[str, None] = None
+    description: Union[Description, None] = None
